@@ -26,6 +26,8 @@ namespace MySQL_test
     /// </summary>
     public partial class MainWindow : Window
     {
+        AppDbContext db;
+
         private readonly ICompanyRepository _companyRepository;
 
         private BindingList<Company> Companies = new();
@@ -35,6 +37,10 @@ namespace MySQL_test
             _companyRepository = new CompanyRepository();
 
             InitializeComponent();
+
+            //db = new AppDbContext();
+            //db.Companies.Load(); // загружаем данные
+            //companiesGrid.ItemsSource = db.Companies.Local.ToBindingList(); // устанавливаем привязку к кэшу
 
             Load();
         }
