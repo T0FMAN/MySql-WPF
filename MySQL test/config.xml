@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<connectionStrings>
+	<connectionString name="MySql">
+		<connection>server=localhost;user=root;password=password;database=companiesdb;</connection>
+	</connectionString>
+	<connectionString name="SqlServer">
+		<connection>"timeouyresresrsef"</connection>
+	</connectionString>
+</connectionStrings>
