@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPF_Dem.ekz_test___EF_MySQL.Models
+namespace MySQL_test.Models
 {
-    public class Company
+    public class Post
     {
         [Key]
-        public int Id { get; set; }
+        public int IdPost { get; set; }
         public string Title { get; set; }
-        public string Location { get; set; }
     }
 }

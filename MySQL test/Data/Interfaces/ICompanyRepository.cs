@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,8 +8,8 @@ using MySQL_test.Models;
 
 namespace MySQL_test.Data.Interfaces
 {
-    internal interface ICompanyRepository : IRepository<Company>
+    public interface ICompanyRepository : IRepository<Company>
     {
-
+        Task<BindingList<Company>> GetAllAsBindingList();
     }
 }

@@ -1,0 +1,23 @@
+﻿<Window x:Class="MySQL_test.Views.AddModelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySQL_test.Views"
+        mc:Ignorable="d"
+        Title="Добавление модели данных" Height="450" Width="800" WindowStartupLocation="CenterOwner" Foreground="Black" Background="#FFE8BA1B">
+    <Grid>
+        <TextBox x:Name="TitleTextBox" HorizontalAlignment="Left" Margin="210,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Название компании" HorizontalAlignment="Left" Margin="210,106,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CountryTextBox" HorizontalAlignment="Left" Margin="210,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Страна" HorizontalAlignment="Left" Margin="210,150,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="RegionTextBox" HorizontalAlignment="Left" Margin="210,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Регион" HorizontalAlignment="Left" Margin="210,194,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Margin="210,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Город" HorizontalAlignment="Left" Margin="210,238,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StreetTextBox" HorizontalAlignment="Left" Margin="210,308,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Улица" HorizontalAlignment="Left" Margin="210,282,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="AddModelButton" Content="Добавить" HorizontalAlignment="Left" Margin="271,331,0,0" VerticalAlignment="Top" Click="AddModelButton_Click"/>
+
+    </Grid>
+</Window>

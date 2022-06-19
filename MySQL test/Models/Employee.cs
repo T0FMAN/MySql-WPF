@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace MySQL_test.Models
 {
-    public class Company
+    public class Employee
     {
         [Key]
-        [ForeignKey("Location")]
+        public int IdEmployee { get; set; }
+        [ForeignKey("Company")]
         public int IdCompany { get; set; }
-        public string Title { get; set; }
-        public Location Location { get; set; }
-        public List<Employee> Employees { get; set; }
+        public Company Company { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
     }
 }

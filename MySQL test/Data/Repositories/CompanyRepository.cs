@@ -12,11 +12,22 @@ namespace MySQL_test.Data.Repositories
 {
     public class CompanyRepository : ICompanyRepository
     {
-        private readonly AppDbContext _context;
+        readonly AppDbContext _context;
 
         public CompanyRepository()
         {
             _context = new AppDbContext();
+        }
+
+        public async Task<BindingList<Company>> GetAllAsBindingList()
+        {
+            var companies = await _context.Companies.Include(n => n.Location)
+                                                    .Include(n => n.Employees)
+                                                    .ToListAsync();
+
+            var bindingList = new BindingList<Company>(companies);
+
+            return bindingList;
         }
 
         public async Task<IEnumerable<Company>> GetAll()
@@ -27,13 +38,7 @@ namespace MySQL_test.Data.Repositories
         public bool Save()
         {
             var saved = _context.SaveChanges();
-
             return saved > 0;
-        }
-
-        public bool Update(object data)
-        {
-            throw new NotImplementedException();
         }
 
         public bool Add(Company item)
@@ -50,12 +55,28 @@ namespace MySQL_test.Data.Repositories
 
         public bool Update(Company item)
         {
-            throw new NotImplementedException();
+            _context.Update(item);
+            return Save();
+        }
+
+        bool disposed = false;
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            disposed = true;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }
